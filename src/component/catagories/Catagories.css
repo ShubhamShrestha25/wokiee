@@ -1,0 +1,11 @@
+.catagories {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.catagories p {
+  color: rgb(81, 80, 80);
+  font-weight: lighter;
+  font-size: 15px;
+}

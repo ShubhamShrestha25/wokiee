@@ -1,0 +1,14 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem 6rem;
+}
+
+.navbar img {
+  width: 8rem;
+}
+
+.navRight {
+  display: flex;
+  gap: 1.5rem;
+}
