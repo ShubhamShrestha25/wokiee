@@ -12,3 +12,27 @@
   display: flex;
   gap: 1.5rem;
 }
+
+.hamburgerMenu {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .hamburgerMenu {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    margin: 1.5rem 2rem;
+  }
+
+  .navbar img {
+    width: 6rem;
+  }
+
+  .navRight {
+    gap: 0.5rem;
+  }
+}
