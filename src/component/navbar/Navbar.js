@@ -4,7 +4,6 @@ import {
   ShoppingBagOutlined,
   Menu,
 } from "@mui/icons-material";
-import { display } from "@mui/system";
 import { useState } from "react";
 import Catagories from "../catagories/Catagories";
 import "./Navbar.css";

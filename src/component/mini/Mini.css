@@ -1,0 +1,19 @@
+.miniContainer {
+  height: 50vh;
+  width: 100%;
+
+  margin: 2rem 0rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.miniBox {
+  background-color: blue;
+  width: 40vw;
+  height: 40vh;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
