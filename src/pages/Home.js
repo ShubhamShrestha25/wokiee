@@ -1,4 +1,4 @@
-import Mini from "../component/mini/Mini";
+import Category from "../component/category/Category";
 import Navbar from "../component/navbar/Navbar";
 import SimpleSlider from "../component/slider/SimpleSlider";
 
@@ -7,7 +7,7 @@ const Home = () => {
     <div>
       <Navbar />
       <SimpleSlider />
-      <Mini />
+      <Category />
     </div>
   );
 };

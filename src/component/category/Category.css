@@ -1,0 +1,58 @@
+.catContainer {
+  height: 100vh;
+  margin: 2rem 0;
+}
+
+.catRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+}
+
+.catItem {
+  position: relative;
+  flex: 1;
+  margin: 2px 8px;
+  transition: all 1s;
+  border-radius: 1rem;
+}
+
+.catItem:hover {
+  transform: scale(1.01);
+}
+
+.catButton {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+}
+
+.catItem img {
+  width: 100%;
+  height: 65vh;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.catButton button {
+  padding: 12px 27px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background-color: white;
+  opacity: 0.9;
+}
+
+.catButton button:hover {
+  color: white;
+  background-color: rgb(48, 48, 250);
+}
