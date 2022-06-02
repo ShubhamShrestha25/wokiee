@@ -1,5 +1,6 @@
 import Category from "../component/category/Category";
 import Navbar from "../component/navbar/Navbar";
+import NewProducts from "../component/newProducts/NewProducts";
 import SimpleSlider from "../component/slider/SimpleSlider";
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
       <Navbar />
       <SimpleSlider />
       <Category />
+      <NewProducts />
     </div>
   );
 };
