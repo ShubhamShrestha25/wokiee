@@ -1,0 +1,38 @@
+.services {
+  display: flex;
+  justify-content: space-around;
+  margin: 7rem 1rem;
+}
+
+.servicesItems {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.serviceIcons {
+  font-size: 3rem !important;
+  color: #007bff;
+}
+
+.servicesText h4 {
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.servicesText p {
+  font-size: 14px;
+  color: rgb(94, 94, 95);
+}
+
+@media screen and (max-width: 1000px) {
+  .services {
+    flex-direction: column;
+  }
+  .servicesItems {
+    justify-content: center;
+  }
+  .servicesText {
+    margin: 1rem 0rem;
+  }
+}

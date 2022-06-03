@@ -23,6 +23,10 @@
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
+.productCard:hover {
+  transform: scale(1.03);
+}
+
 .mainImages img {
   height: 300px;
   width: 300px;
@@ -67,7 +71,7 @@
 }
 
 .productButton {
-  border: 1px solid rgb(71, 71, 247);
+  border: 1px solid #007bff;
   border-radius: 10px;
   font-size: 12px;
   outline: none;
@@ -78,7 +82,7 @@
 }
 
 .productButton:hover {
-  background-color: rgb(3, 3, 237);
+  background-color: #007bff;
   color: #fff;
   opacity: 0.8;
 }
