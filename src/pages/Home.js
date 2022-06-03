@@ -1,6 +1,6 @@
 import Category from "../component/category/Category";
 import Navbar from "../component/navbar/Navbar";
-import NewProducts from "../component/newProducts/NewProducts";
+import NewProducts from "../component/homeProducts/NewProducts";
 import SimpleSlider from "../component/slider/SimpleSlider";
 
 const Home = () => {
