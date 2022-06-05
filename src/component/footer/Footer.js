@@ -1,3 +1,4 @@
+import Copyright from "./Copyright";
 import "./Footer.css";
 const Footer = () => {
   return (
@@ -21,9 +22,7 @@ const Footer = () => {
         </div>
       </div>
       <h3>
-        {" "}
-        &copy; {new Date().getFullYear()} <span>WoKiee</span> | All rights
-        reserved
+        <Copyright />
       </h3>
     </div>
   );
