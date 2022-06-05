@@ -3,20 +3,32 @@ import axios from "axios";
 
 const initialState = {
   products: [],
-  status: null,
+  loading: false,
 };
 
 export const fetchProducts = createAsyncThunk(
-    "products/fetchProducts",
-    () => {
-        axios.get("")
-    }
-)
+  "products/fetchProducts",
+  async () => {
+    const res = await axios.get("http://localhost:8000/products");
+    return res?.data;
+  }
+);
 
 const productsSlice = createSlice({
   name: "products",
   initialState,
-  reducers: {},
+  extraReducers: {
+    [fetchProducts.pending]: (state) => {
+      state.loading = true;
+    },
+    [fetchProducts.fulfilled]: (state, action) => {
+      state.loading = false;
+      state.products = action.payload;
+    },
+    [fetchProducts.rejected]: (state) => {
+      state.loading = false;
+    },
+  },
 });
 
 export default productsSlice.reducer;

@@ -1,16 +1,24 @@
 import "./HomeProducts.css";
 import Rating from "@mui/material/Rating";
-import products from "../../data.json";
-import { useState } from "react";
+import { fetchProducts } from "../../redux/features/productsSlice";
+import { useEffect, useState } from "react";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
 
 const NewProducts = () => {
-  const [value, setValue] = useState(4);
+  const { products } = useSelector((state) => state.products);
+  const dispatch = useDispatch();
   const [size, setSize] = useState("");
 
   const sizeHandler = (e) => {
     setSize(e.target.value);
   };
+
+  console.log(products);
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
 
   return (
     <>
@@ -22,18 +30,12 @@ const NewProducts = () => {
         {products.map((product) => (
           <div className="productCard" key={product.id}>
             <div className="mainImages">
-              <img src={product.image} alt="black" />
+              <img src="" alt="" />
             </div>
             <div className="productDetails">
               <h4 className="productTitle">{product.title}</h4>
               <div className="productStar">
-                <Rating
-                  name="simple-controlled"
-                  value={value}
-                  onChange={(newValue) => {
-                    setValue(newValue);
-                  }}
-                />
+                <Rating name="simple-controlled" value={product.rating} />
               </div>
               <p>{product.desc}</p>
               <div className="productDetailsBottom">
