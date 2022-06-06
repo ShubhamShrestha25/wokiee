@@ -1,10 +1,11 @@
 import "./HomeProducts.css";
 import Rating from "@mui/material/Rating";
-import products from "../../data.json";
 import { useState } from "react";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import { useSelector } from "react-redux";
 
 const BestSelling = () => {
+  const { products } = useSelector((state) => state.products);
   const [value, setValue] = useState(4);
   const [size, setSize] = useState("");
 

@@ -14,8 +14,6 @@ const NewProducts = () => {
     setSize(e.target.value);
   };
 
-  console.log(products);
-
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
@@ -30,7 +28,7 @@ const NewProducts = () => {
         {products.map((product) => (
           <div className="productCard" key={product.id}>
             <div className="mainImages">
-              <img src="" alt="" />
+              <img src={product.image} alt="" />
             </div>
             <div className="productDetails">
               <h4 className="productTitle">{product.title}</h4>

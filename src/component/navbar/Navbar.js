@@ -29,7 +29,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <Catagories showMenu={showMenu} setShowMenu={setShowMenu}/>
+      <Catagories showMenu={showMenu} setShowMenu={setShowMenu} />
     </>
   );
 };
