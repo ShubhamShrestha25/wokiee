@@ -4,6 +4,7 @@ import { fetchProducts } from "../../redux/features/productsSlice";
 import { useEffect, useState } from "react";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const NewProducts = () => {
   const { products } = useSelector((state) => state.products);
@@ -28,7 +29,9 @@ const NewProducts = () => {
         {products.map((product) => (
           <div className="productCard" key={product.id}>
             <div className="mainImages">
-              <img src={product.image} alt="" />
+              <Link to={`/products/${product.id}`}>
+                <img src={product.image} alt="" />
+              </Link>
             </div>
             <div className="productDetails">
               <h4 className="productTitle">{product.title}</h4>
