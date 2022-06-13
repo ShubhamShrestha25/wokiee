@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const NewProducts = () => {
-  const { products } = useSelector((state) => state.products);
+  const products = useSelector((state) => state.products.products);
   const dispatch = useDispatch();
   const [size, setSize] = useState("");
 
@@ -52,11 +52,11 @@ const NewProducts = () => {
                       }}
                       onChange={sizeHandler}
                     >
-                      <MenuItem value="S">S</MenuItem>
-                      <MenuItem value="M">M</MenuItem>
-                      <MenuItem value="L">L</MenuItem>
-                      <MenuItem value="XL"> XL</MenuItem>
-                      <MenuItem value="XXL">XXL</MenuItem>
+                      {product.size.map((s) => (
+                        <MenuItem value={s} key={s}>
+                          {s}
+                        </MenuItem>
+                      ))}
                     </Select>
                   </FormControl>
                 </div>
