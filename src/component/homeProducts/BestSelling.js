@@ -15,11 +15,11 @@ const BestSelling = () => {
 
   return (
     <>
-      <div className="homeProductsTop">
+      <div className="ProductsTop">
         <h3>Best Selling Products</h3>
         <p>Our best selling product this week</p>
       </div>
-      <div className="homeProducts">
+      <div className="Products">
         {products.map((product) => (
           <div className="productCard" key={product.id}>
             <div className="mainImages">

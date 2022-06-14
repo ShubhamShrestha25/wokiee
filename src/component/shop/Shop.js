@@ -1,12 +1,19 @@
-import "./HomeProducts.css";
-import Rating from "@mui/material/Rating";
-import { fetchProducts } from "../../redux/features/productsSlice";
-import { useEffect, useState } from "react";
-import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import "./Shop.css";
+import Navbar from "../navbar/Navbar";
+import CopyRight from "../footer/Copyright";
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { fetchProducts } from "../../redux/features/productsSlice";
 import { Link } from "react-router-dom";
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Rating,
+  Select,
+} from "@mui/material";
 
-const NewProducts = () => {
+const Shop = () => {
   const products = useSelector((state) => state.products.products);
   const dispatch = useDispatch();
   const [size, setSize] = useState("");
@@ -18,12 +25,13 @@ const NewProducts = () => {
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
-
   return (
     <>
+      <Navbar />
+
       <div className="ProductsTop">
-        <h3>New Products</h3>
-        <p>Newest product this week</p>
+        <h3>SHOP</h3>
+        <p>All available products</p>
       </div>
       <div className="Products">
         {products.map((product) => (
@@ -69,8 +77,9 @@ const NewProducts = () => {
           </div>
         ))}
       </div>
+      <CopyRight />
     </>
   );
 };
 
-export default NewProducts;
+export default Shop;

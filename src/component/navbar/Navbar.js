@@ -5,6 +5,7 @@ import {
   Menu,
 } from "@mui/icons-material";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Catagories from "../catagories/Catagories";
 import "./Navbar.css";
 
@@ -13,7 +14,9 @@ const Navbar = () => {
   return (
     <>
       <div className="navbar">
-        <img src="/images/logo.png" alt="" />
+        <Link className="link" to="/">
+          <img src="/images/logo.png" alt="" />
+        </Link>
         <div className="navRight">
           <div className="navRightItems">
             <Search />

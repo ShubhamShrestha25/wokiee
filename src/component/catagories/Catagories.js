@@ -1,4 +1,5 @@
 import { Close } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 import "./Catagories.css";
 
 const Catagories = ({ showMenu, setShowMenu }) => {
@@ -8,10 +9,14 @@ const Catagories = ({ showMenu, setShowMenu }) => {
         <Close className="closeIcon " />
       </div>
       <div className="catItems">
-        <p>HOME</p>
+        <Link className="link" to="/">
+          <p>HOME</p>
+        </Link>
       </div>
       <div className="catItems">
-        <p>SHOP</p>
+        <Link className="link" to="/shop">
+          <p>SHOP</p>
+        </Link>
       </div>
       <div className="catItems">
         <p>BLOG</p>
