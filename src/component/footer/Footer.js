@@ -21,9 +21,6 @@ const Footer = () => {
           <p>E-mail: info@wokieeNepal.com</p>
         </div>
       </div>
-      <h4>
-        <Copyright />
-      </h4>
     </div>
   );
 };

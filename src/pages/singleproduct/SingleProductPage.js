@@ -1,5 +1,3 @@
-import Navbar from "../../component/navbar/Navbar";
-import CopyRight from "../../component/footer/Copyright";
 import "./SingleProductPage.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
@@ -22,44 +20,40 @@ const SingleProductPage = () => {
   };
 
   return (
-    <div className="singleProduct">
-      <Navbar />
-      <div className="singleProductContainer">
-        <div className="singleProductLeft">
-          <img src={singleProduct.image} alt="" />
+    <div className="singleProductContainer">
+      <div className="singleProductLeft">
+        <img src={singleProduct.image} alt="" />
+      </div>
+      <div className="singleProductRight">
+        <div className="singleProductTitle">
+          <h3>{singleProduct.title}</h3>
         </div>
-        <div className="singleProductRight">
-          <div className="singleProductTitle">
-            <h3>{singleProduct.title}</h3>
-          </div>
-          <div className="SingleProductDesc">{singleProduct.desc}</div>
-          <div className="SingleProductPriceSize">
-            <FormControl fullWidth>
-              <InputLabel id="size">Size</InputLabel>
-              <Select
-                label="size"
-                value={size}
-                sx={{
-                  width: "5rem",
-                  height: "3.2rem",
-                }}
-                onChange={sizeHandler}
-              >
-                {singleProduct.size?.map((s) => (
-                  <MenuItem value={s} key={s}>
-                    {s}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-            <div className="singleProductPrice">{singleProduct.price}</div>
-          </div>
-          <div className="productCardButton">
-            <button className="productButton">Add To Card</button>
-          </div>
+        <div className="SingleProductDesc">{singleProduct.desc}</div>
+        <div className="SingleProductPriceSize">
+          <FormControl fullWidth>
+            <InputLabel id="size">Size</InputLabel>
+            <Select
+              label="size"
+              value={size}
+              sx={{
+                width: "5rem",
+                height: "3.2rem",
+              }}
+              onChange={sizeHandler}
+            >
+              {singleProduct.size?.map((s) => (
+                <MenuItem value={s} key={s}>
+                  {s}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+          <div className="singleProductPrice">{singleProduct.price}</div>
+        </div>
+        <div className="productCardButton">
+          <button className="productButton">Add To Card</button>
         </div>
       </div>
-      <CopyRight />
     </div>
   );
 };

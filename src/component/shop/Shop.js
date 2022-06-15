@@ -1,6 +1,4 @@
 import "./Shop.css";
-import Navbar from "../navbar/Navbar";
-import CopyRight from "../footer/Copyright";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchProducts } from "../../redux/features/productsSlice";
@@ -27,8 +25,6 @@ const Shop = () => {
   }, [dispatch]);
   return (
     <>
-      <Navbar />
-
       <div className="ProductsTop">
         <h3>SHOP</h3>
         <p>All available products</p>
@@ -77,7 +73,6 @@ const Shop = () => {
           </div>
         ))}
       </div>
-      <CopyRight />
     </>
   );
 };

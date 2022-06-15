@@ -22,7 +22,9 @@ const Navbar = () => {
             <Search />
           </div>
           <div className="navRightItems">
-            <ShoppingBagOutlined />
+            <Link className="link" to="/cart">
+              <ShoppingBagOutlined />
+            </Link>
           </div>
           <div className="navRightItems">
             <PersonOutlineOutlined />
