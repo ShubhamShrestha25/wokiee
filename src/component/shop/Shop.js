@@ -10,6 +10,7 @@ import {
   Rating,
   Select,
 } from "@mui/material";
+import { addToCart } from "../../redux/features/cartSlice";
 
 const Shop = () => {
   const products = useSelector((state) => state.products.products);
@@ -18,6 +19,11 @@ const Shop = () => {
 
   const sizeHandler = (e) => {
     setSize(e.target.value);
+  };
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+    console.log(product);
   };
 
   useEffect(() => {
@@ -67,7 +73,12 @@ const Shop = () => {
                 <div className="productDetailsPrice">${product.price}</div>
               </div>
               <div className="productCardButton">
-                <button className="productButton">Add To Card</button>
+                <button
+                  className="productButton"
+                  onClick={() => handleAddToCart(product)}
+                >
+                  Add To Card
+                </button>
               </div>
             </div>
           </div>

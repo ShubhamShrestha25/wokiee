@@ -19,7 +19,7 @@ const Cart = () => {
           </div>
         </div>
       ) : (
-        <div> 
+        <div>
           <div className="titles">
             <h3 className="product-title">Product</h3>
             <h3 className="price">Price</h3>
@@ -31,9 +31,40 @@ const Cart = () => {
               <div className="cart-item" key={cartItem.id}>
                 <div className="cart-product">
                   <img src={cartItem.image} alt="" />
+                  <div>
+                    <h3>{cartItem.title}</h3>
+                    <p>{cartItem.desc}</p>
+                    <button>Remove</button>
+                  </div>
+                </div>
+                <div className="cart-product-price">${cartItem.price}</div>
+                <div className="cart-product-quantity">
+                  <button>-</button>
+                  <div className="count">{cartItem.cartQuantity}</div>
+                  <button>+</button>
+                </div>
+                <div className="cart-product-total-price">
+                  ${cartItem.price * cartItem.cartQuantity}
                 </div>
               </div>
             ))}
+          </div>
+          <div className="cart-summary">
+            <button className="clear-btn">Clear Cart</button>
+            <div className="cart-checkout">
+              <div className="subtotal">
+                <span>Subtotal</span>
+                <span className="amount">${cart.cartTotalAmount}</span>
+              </div>
+              <p>Taxes and shipping calculated at checkout</p>
+              <button>Checkout</button>
+              <div className="continue-shopping">
+                <Link to="/">
+                  <span>Continue Shopping</span>
+                  <ArrowBack />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       )}
