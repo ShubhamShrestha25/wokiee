@@ -7,18 +7,16 @@
       "desc": "hello guys dsadsadsad zczxczczczc",
       "price": 29,
       "rating": 4,
-      "size": ["S", "M", "XXL"],
-      "cartQuantity": 0
+      "size": ["S", "M", "XXL"]
     },
     {
       "id": 2,
       "image": "/images/shirt.jpg",
-      "title": "Black tshirt",
+      "title": "Red tshirt",
       "desc": "hello guys dsadsadsad zczxczczczc",
       "price": 80,
       "rating": 4.5,
-      "size": ["S", "XL", "XXL"],
-      "cartQuantity": 0
+      "size": ["S", "XL", "XXL"]
     },
     {
       "id": 3,
@@ -27,8 +25,7 @@
       "desc": "hello guys dsadsadsad zczxczczczc",
       "price": 101,
       "rating": 3,
-      "size": ["S"],
-      "cartQuantity": 0
+      "size": ["S"]
     },
     {
       "id": 4,
@@ -37,18 +34,16 @@
       "desc": "hello guys dsadsadsad zczxczczczc",
       "price": 101,
       "rating": 5,
-      "size": ["M", "XXL"],
-      "cartQuantity": {}
+      "size": ["M", "XXL"]
     },
     {
       "id": 5,
       "image": "/images/shirt.jpg",
-      "title": "dark tshirt",
+      "title": "black tshirt",
       "desc": "hello guys dsadsadsad zczxczczczc",
       "price": 101,
       "rating": 2,
-      "size": ["S", "M", "Xl", "XXL"],
-      "cartQuantity": 0
+      "size": ["S", "M", "Xl", "XXL"]
     }
   ]
 }

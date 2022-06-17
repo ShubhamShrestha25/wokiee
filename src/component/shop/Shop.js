@@ -23,7 +23,6 @@ const Shop = () => {
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
-    console.log(product);
   };
 
   useEffect(() => {

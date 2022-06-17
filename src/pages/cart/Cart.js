@@ -1,10 +1,17 @@
 import { ArrowBack } from "@mui/icons-material";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { removeFromCart } from "../../redux/features/cartSlice";
 import "./Cart.css";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+
+  const handleRemoveFromCart = (cartItem) => {
+    dispatch(removeFromCart(cartItem));
+  };
+
   return (
     <div className="cart-container">
       <h2>Shopping Cart</h2>
@@ -34,7 +41,9 @@ const Cart = () => {
                   <div>
                     <h3>{cartItem.title}</h3>
                     <p>{cartItem.desc}</p>
-                    <button>Remove</button>
+                    <button onClick={() => handleRemoveFromCart(cartItem)}>
+                      Remove
+                    </button>
                   </div>
                 </div>
                 <div className="cart-product-price">${cartItem.price}</div>

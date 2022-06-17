@@ -2,15 +2,21 @@ import "./HomeProducts.css";
 import Rating from "@mui/material/Rating";
 import { useState } from "react";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../redux/features/cartSlice";
 
 const BestSelling = () => {
   const { products } = useSelector((state) => state.products);
   const [value, setValue] = useState(4);
   const [size, setSize] = useState("");
+  const dispatch = useDispatch();
 
   const sizeHandler = (e) => {
     setSize(e.target.value);
+  };
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
   };
 
   return (
@@ -61,7 +67,12 @@ const BestSelling = () => {
                 <div className="productDetailsPrice">${product.price}</div>
               </div>
               <div className="productCardButton">
-                <button className="productButton">Add To Card</button>
+                <button
+                  className="productButton"
+                  onClick={() => handleAddToCart(product)}
+                >
+                  Add To Card
+                </button>
               </div>
             </div>
           </div>

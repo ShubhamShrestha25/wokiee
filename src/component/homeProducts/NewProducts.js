@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { addToCart } from "../../redux/features/cartSlice";
 
 const NewProducts = () => {
   const products = useSelector((state) => state.products.products);
@@ -13,6 +14,10 @@ const NewProducts = () => {
 
   const sizeHandler = (e) => {
     setSize(e.target.value);
+  };
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
   };
 
   useEffect(() => {
@@ -63,7 +68,12 @@ const NewProducts = () => {
                 <div className="productDetailsPrice">${product.price}</div>
               </div>
               <div className="productCardButton">
-                <button className="productButton">Add To Card</button>
+                <button
+                  className="productButton"
+                  onClick={() => handleAddToCart(product)}
+                >
+                  Add To Card
+                </button>
               </div>
             </div>
           </div>
