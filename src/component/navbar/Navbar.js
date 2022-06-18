@@ -5,12 +5,15 @@ import {
   Menu,
 } from "@mui/icons-material";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Catagories from "../catagories/Catagories";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const { cartTotalQuantity } = useSelector((state) => state.cart);
+
   return (
     <>
       <div className="navbar">
@@ -21,10 +24,13 @@ const Navbar = () => {
           <div className="navRightItems">
             <Search />
           </div>
-          <div className="navRightItems">
+          <div className="navBag">
             <Link className="link" to="/cart">
               <ShoppingBagOutlined />
             </Link>
+            <span className="bagQuantity">
+              <span>{cartTotalQuantity}</span>
+            </span>
           </div>
           <div className="navRightItems">
             <PersonOutlineOutlined />

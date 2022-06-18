@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addToCart } from "../../redux/features/cartSlice";
+import { addToCart, getTotals } from "../../redux/features/cartSlice";
 
 const NewProducts = () => {
   const products = useSelector((state) => state.products.products);
@@ -18,6 +18,7 @@ const NewProducts = () => {
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
+    dispatch(getTotals());
   };
 
   useEffect(() => {

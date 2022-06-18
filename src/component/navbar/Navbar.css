@@ -8,6 +8,28 @@
   width: 8rem;
 }
 
+.navBag {
+  display: flex;
+  position: relative;
+}
+
+.bagQuantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  background: #007bff;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  top: -0.8rem;
+  left: 1rem;
+  cursor: default;
+}
+
 .navRight {
   display: flex;
   gap: 1.5rem;

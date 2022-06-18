@@ -10,7 +10,7 @@ import {
   Rating,
   Select,
 } from "@mui/material";
-import { addToCart } from "../../redux/features/cartSlice";
+import { addToCart, getTotals } from "../../redux/features/cartSlice";
 
 const Shop = () => {
   const products = useSelector((state) => state.products.products);
@@ -23,6 +23,7 @@ const Shop = () => {
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
+    dispatch(getTotals());
   };
 
   useEffect(() => {

@@ -4,12 +4,18 @@ import { useEffect, useState } from "react";
 import { viewProducts } from "../../redux/features/productsSlice";
 import { useParams } from "react-router-dom";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import { addToCart, getTotals } from "../../redux/features/cartSlice";
 
 const SingleProductPage = () => {
   const singleProduct = useSelector((state) => state.products.singleProduct);
   const dispatch = useDispatch();
   const { id } = useParams();
   const [size, setSize] = useState("");
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+    dispatch(getTotals());
+  };
 
   useEffect(() => {
     dispatch(viewProducts(id));
@@ -51,7 +57,12 @@ const SingleProductPage = () => {
           <div className="singleProductPrice">{singleProduct.price}</div>
         </div>
         <div className="productCardButton">
-          <button className="productButton">Add To Card</button>
+          <button
+            className="productButton"
+            onClick={() => handleAddToCart(singleProduct)}
+          >
+            Add To Card
+          </button>
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/features/cartSlice";
+import { Link } from "react-router-dom";
 
 const BestSelling = () => {
   const { products } = useSelector((state) => state.products);
@@ -29,7 +30,9 @@ const BestSelling = () => {
         {products.map((product) => (
           <div className="productCard" key={product.id}>
             <div className="mainImages">
+            <Link to={`/products/${product.id}`}>
               <img src={product.image} alt="black" />
+              </Link>
             </div>
             <div className="productDetails">
               <h4 className="productTitle">{product.title}</h4>
