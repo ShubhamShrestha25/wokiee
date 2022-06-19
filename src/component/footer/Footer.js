@@ -1,4 +1,3 @@
-import Copyright from "./Copyright";
 import "./Footer.css";
 const Footer = () => {
   return (

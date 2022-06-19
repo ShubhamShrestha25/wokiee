@@ -24,23 +24,26 @@ export const viewProducts = createAsyncThunk(
   }
 );
 
+export const fetchSearchData = createAsyncThunk(
+  "products/fetchSearchData",
+  async (searchInput) => {
+    const res = await axios.get(`${url}/searchresults/${searchInput}`);
+    return res?.data;
+  }
+);
+
 const productsSlice = createSlice({
   name: "products",
   initialState,
   extraReducers: {
-    [fetchProducts.pending]: () => {
-      console.log("pending");
-    },
     [fetchProducts.fulfilled]: (state, action) => {
-      console.log("successfull");
       state.products = action.payload;
     },
-    [fetchProducts.rejected]: () => {
-      console.log("failed");
-    },
     [viewProducts.fulfilled]: (state, action) => {
-      console.log("successfull");
       state.singleProduct = action.payload;
+    },
+    [fetchSearchData.fulfilled]: (state, action) => {
+      state.products = action.payload;
     },
   },
 });

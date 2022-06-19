@@ -4,6 +4,7 @@ import {
   ShoppingBagOutlined,
   Menu,
 } from "@mui/icons-material";
+import SearchBar from "../search/SearchBar";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -12,6 +13,7 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [showSearchBar, setShowSearchBar] = useState(false);
   const { cartTotalQuantity } = useSelector((state) => state.cart);
 
   return (
@@ -22,7 +24,7 @@ const Navbar = () => {
         </Link>
         <div className="navRight">
           <div className="navRightItems">
-            <Search />
+            <Search onClick={() => setShowSearchBar(!showSearchBar)} />
           </div>
           <div className="navBag">
             <Link className="link" to="/cart">
@@ -41,6 +43,10 @@ const Navbar = () => {
         </div>
       </div>
       <Catagories showMenu={showMenu} setShowMenu={setShowMenu} />
+      <SearchBar
+        showSearchBar={showSearchBar}
+        setShowSearchBar={setShowSearchBar}
+      />
     </>
   );
 };
