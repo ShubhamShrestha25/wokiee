@@ -7,6 +7,7 @@ import Navbar from "./component/navbar/Navbar";
 import Copyright from "./component/footer/Copyright";
 import Cart from "./pages/cart/Cart";
 import SearchPage from "./pages/SearchPage";
+import Login from "./pages/login/Login";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/products/:id" element={<SingleProductPage />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/searchresults/:searchInput" element={<SearchPage />} />
       </Routes>
       <Copyright />

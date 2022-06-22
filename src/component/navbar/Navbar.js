@@ -35,7 +35,9 @@ const Navbar = () => {
             </span>
           </div>
           <div className="navRightItems">
-            <PersonOutlineOutlined />
+            <Link to="/login" className="link">
+              <PersonOutlineOutlined />
+            </Link>
           </div>
           <div className="hamburgerMenu" onClick={() => setShowMenu(!showMenu)}>
             <Menu />
