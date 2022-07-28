@@ -1,7 +1,7 @@
 import { ArrowBack } from "@mui/icons-material";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   clearCart,
   decreaseCart,
@@ -10,11 +10,11 @@ import {
   removeFromCart,
 } from "../../redux/features/cartSlice";
 import "./Cart.css";
-import StripeCheckout from 'react-stripe-checkout';
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleRemoveFromCart = (cartItem) => {
     dispatch(removeFromCart(cartItem));
@@ -31,6 +31,13 @@ const Cart = () => {
   useEffect(() => {
     dispatch(getTotals());
   }, [cart, dispatch]);
+
+  const checkoutHandler = () => {
+    alert("Payment Sucessfull !!!");
+    dispatch(clearCart());
+    navigate("/");
+    dispatch(getTotals());
+  };
 
   return (
     <div className="cart-container">
@@ -92,7 +99,7 @@ const Cart = () => {
                 <span className="amount">${cart.cartTotalAmount}</span>
               </div>
               <p>Taxes and shipping calculated at checkout</p>
-              <button>Checkout</button>
+              <button onClick={checkoutHandler}>Checkout</button>
               <div className="continue-shopping">
                 <Link to="/">
                   <span>Continue Shopping</span>
@@ -103,9 +110,6 @@ const Cart = () => {
           </div>
         </div>
       )}
-       <StripeCheckout
-        stripeKey="my_PUBLISHABLE_stripekey"
-      />
     </div>
   );
 };
