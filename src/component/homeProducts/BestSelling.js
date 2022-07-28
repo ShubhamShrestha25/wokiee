@@ -3,7 +3,7 @@ import Rating from "@mui/material/Rating";
 import { useState } from "react";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../redux/features/cartSlice";
+import { addToCart, getTotals } from "../../redux/features/cartSlice";
 import { Link } from "react-router-dom";
 
 const BestSelling = () => {
@@ -18,6 +18,7 @@ const BestSelling = () => {
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
+    dispatch(getTotals());
   };
 
   return (

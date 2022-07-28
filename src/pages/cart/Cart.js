@@ -10,6 +10,7 @@ import {
   removeFromCart,
 } from "../../redux/features/cartSlice";
 import "./Cart.css";
+import StripeCheckout from 'react-stripe-checkout';
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
@@ -102,6 +103,9 @@ const Cart = () => {
           </div>
         </div>
       )}
+       <StripeCheckout
+        stripeKey="my_PUBLISHABLE_stripekey"
+      />
     </div>
   );
 };
